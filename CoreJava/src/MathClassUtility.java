@@ -42,7 +42,7 @@ public class MathClassUtility {
         double sqrt = Math.sqrt(notAnumber);
         System.out.println(notAnumber);
 
-        double logValue = Math.log(100/8);
+        double logValue = Math.log(100/8);   //inverse documentary frequency
         System.out.println(logValue);
     }
     public static void main(String[]args){
