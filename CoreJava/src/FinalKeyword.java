@@ -1,4 +1,3 @@
-
 //final class and final method:
 final class FinalClass {
     public  final void display() {
