@@ -52,9 +52,11 @@ package Feb16;
             System.out.println("Hi Anushka");
 
             System.out.println("method-1 :");
+
             DisplayStatic();
 
             System.out.println("method-2 :");
+
             Print();
         }
     }
