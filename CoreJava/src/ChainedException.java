@@ -8,17 +8,27 @@ public class ChainedException {
     public static void test() throws ApplicationException {
         try {
             int a = 0;
+
             int b = 1;
+
             System.out.println(b/a);
-        }catch(Exception e) {
+
+        }
+        catch(Exception e) {
+
             throw new ApplicationException(e);
         }
     }
     public static void main(String[] args) {
         try {
+
             test();
-        }catch(ApplicationException e) {
+
+        }
+        catch(ApplicationException e) {
+
             System.out.println(e.getMessage());
+
         }
     }
 
