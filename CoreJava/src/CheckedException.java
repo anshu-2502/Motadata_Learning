@@ -11,6 +11,7 @@ public class CheckedException {
 //        int k;
 //
 //        while (( k = finalInputStreamObject.read() ) != -1) {
+
 //            System.out.println( (char) k );
 //        }
 //
@@ -24,22 +25,32 @@ public class CheckedException {
             finalInputStreamObject = new FileInputStream( "/home/anshu/Desktop/AnshuSharma(2019BtechCSE009).pdf" );
         }
         catch(FileNotFoundException e){
+
             System.out.println("give the right path: ");
+
         }
+
         int k;
 
         try {
 
             while (( k = finalInputStreamObject.read() ) != -1) {
+
                 System.out.println( (char) k );
             }
+
             finalInputStreamObject.close();
         }
+
         catch ( IOException e){
+
             System.out.println("I/O ERROR OCCURRED");
+
         }
         finally {
+
             System.out.println("finally block executed.");
+
         }
     }
 }

@@ -4,6 +4,7 @@ public class StringCases {
 
     public static void main(String[]args){
 
+
         String stringvariable1 = new String("created in pool as well as heap");
 
         String stringvariable2 = "hi anushka";
