@@ -20,11 +20,13 @@ class BaseClass{
 
     }
 
-//    private void display(){
-//
-//        System.out.println("private :base class");
-//
-//    }
+/*
+    private void display(){
+
+        System.out.println("private :base class");
+
+    }
+*/
 
 }
 
@@ -41,9 +43,9 @@ public class AccessModifiers {
     public static void main(String[]args){
 
 
-        BaseClass BaseClassObject = new BaseClass();
+//        BaseClass BaseClassObject = new BaseClass();
 
-        DerivedClass derivedClassObject = new DerivedClass();
+//        DerivedClass derivedClassObject = new DerivedClass();
 
         DerivedClass DerivedClassObject = new DerivedderivedClass();
 
