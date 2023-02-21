@@ -7,6 +7,8 @@ public class BitwiseOperators {
         System.out.println("xValue & y: " + (xValue & yValue));
         System.out.println("xValue | yValue: " + (xValue | yValue));
         System.out.println("xValue ^ yValue: " + (xValue ^ yValue));
+
+
         System.out.println("~xValue: " + (~xValue));
         System.out.println("true & false: " + (true & false));
 
