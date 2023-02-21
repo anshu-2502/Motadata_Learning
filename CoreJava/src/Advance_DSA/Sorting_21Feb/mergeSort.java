@@ -91,9 +91,9 @@ public class mergeSort {
             int mid = left + (right - left) / 2;
 
             // Sorting first and second halves
-            sort(inputArray, left, mid);
+            Mergesort(inputArray, left, mid);
 
-            sort(inputArray, mid + 1, right);
+            Mergesort(inputArray, mid + 1, right);
 
             // Merge the sorted halves
 
