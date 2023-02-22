@@ -8,6 +8,8 @@ public class BubbleSort {
 
 
 
+            //when a pass is done without swapping it means array is sorted , so break the loop
+
             boolean swapped = false;
 
             for(int innerLoopIterator=0; innerLoopIterator < inputArrayLength - outerLoopIterator -1 ; innerLoopIterator++ ){
