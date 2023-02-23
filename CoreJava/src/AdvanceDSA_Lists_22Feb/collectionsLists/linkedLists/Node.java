@@ -5,7 +5,7 @@ class Node
     protected int data;
     protected Node link;
 
-    /*  Constructor  */
+
     public Node()
     {
         link = null;
@@ -20,12 +20,16 @@ class Node
 
     public void setLink(Node n)
     {
+
         link = n;
+
     }
 
     public void setData(int d)
     {
+
         data = d;
+
     }
 
     public Node getLink()
