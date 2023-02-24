@@ -17,17 +17,23 @@ public class stacks_array {
 
     public boolean isEmpty()
     {
+
         return top == -1;
+
     }
 
     public boolean isFull()
     {
+
         return top == size -1 ;
+
     }
 
     public int getSize()
     {
+
         return len ;
+
     }
 
     public int peek()
@@ -91,7 +97,7 @@ public class stacks_array {
 
         char ch;
         do{
-            System.out.println("\nStack Operations");
+            System.out.println("Stack Operations");
             System.out.println("1. push");
             System.out.println("2. pop");
             System.out.println("3. peek");
@@ -142,12 +148,12 @@ public class stacks_array {
                     System.out.println("Size = " + stk.getSize());
                     break;
                 default :
-                    System.out.println("Wrong Entry \n ");
+                    System.out.println("Wrong Entry ");
                     break;
             }
-            /* display stack */
+
             stk.display();
-            System.out.println("\nDo you want to continue (Type y or n) \n");
+            System.out.println("\nDo you want to continue (Type y or n)");
             ch = scan.next().charAt(0);
 
         } while (ch == 'Y'|| ch == 'y');

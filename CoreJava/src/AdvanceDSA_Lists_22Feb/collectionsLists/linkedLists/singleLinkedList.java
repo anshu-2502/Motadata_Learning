@@ -11,16 +11,22 @@ public class singleLinkedList {
 
     public singleLinkedList() {
         start = null;
+
         end = null;
+
         size = 0;
     }
 
     public boolean isEmpty() {
+
         return start == null;
+
     }
 
     public int getSize() {
+
         return size;
+
     }
 
     public void insertAtStart(int Value) {
