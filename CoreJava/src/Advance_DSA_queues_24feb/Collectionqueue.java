@@ -15,8 +15,11 @@ public class Collectionqueue {
         str_queue.add("three");
 
         Iterator iterator = str_queue.iterator();
+
         while(iterator.hasNext()){
+
             String element = (String) iterator.next();
+
             System.out.print(element + " ");
         }
 
@@ -31,9 +34,13 @@ public class Collectionqueue {
         str_queue.size();
 
         System.out.println(" ");
+
          iterator = str_queue.iterator();
+
         while(iterator.hasNext()){
+
             String element = (String) iterator.next();
+
             System.out.print(element + " ");
         }
 
