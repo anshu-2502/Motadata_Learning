@@ -157,6 +157,29 @@ public class singleLinkedList {
         size--;
 
     }
+    public Node reverseLinkedlist(Node node){
+        Node previous = null;
+        Node current = node;
+        Node next;
+
+        while(current !=null){
+            next = current.getLink();
+
+            current.setLink(previous);
+
+            previous = current;
+            current = next;
+
+        }
+
+        node = previous;
+
+        return node;
+
+
+    }
+
+
 
     public void display() {
 
@@ -263,6 +286,8 @@ public class singleLinkedList {
                 case 6 :
                     System.out.println("Size = "+ list.getSize());
                     break;
+
+
                 default :
                     System.out.println("Wrong Entry");
                     break;

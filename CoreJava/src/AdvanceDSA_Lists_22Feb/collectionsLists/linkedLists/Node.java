@@ -1,6 +1,6 @@
 package AdvanceDSA_Lists_22Feb.collectionsLists.linkedLists;
 
-class Node
+public class Node
 {
     protected int data;
     protected Node link;
