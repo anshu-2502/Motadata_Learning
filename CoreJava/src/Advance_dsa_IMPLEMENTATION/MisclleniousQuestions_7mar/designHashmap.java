@@ -9,10 +9,13 @@ public class designHashmap {
     int bucketSize =1500;
 
     public designHashmap(){
+
         map = new Integer[numOfBuckets][bucketSize];
+
     }
 
     private Integer[] getBucket(int key){
+
         int bucketIndex = key/bucketSize;
 
         return map[bucketIndex];
@@ -21,12 +24,15 @@ public class designHashmap {
     private Integer getKeyHash(int key){
 
         return key%bucketSize;
+
     }
 
     public void put(int key , int value){
 
         Integer[] bucket = getBucket(key);
+
         int keyHash = getKeyHash(key);
+
         bucket[keyHash] = value;
     }
 
@@ -39,7 +45,9 @@ public class designHashmap {
         if (bucket[keyHash] == null) {
 
             return -1;
-        } else {
+
+        }
+        else {
 
             return bucket[keyHash];
         }

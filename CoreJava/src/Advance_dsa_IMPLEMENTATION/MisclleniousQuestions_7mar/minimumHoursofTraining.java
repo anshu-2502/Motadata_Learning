@@ -30,8 +30,8 @@ public class minimumHoursofTraining {
         while(iterator<experience.length){
 
             //If initialExperience is less then the require experience than
-            // computing the differnce among the two experiences + 1,
-            // and storing the max of this computed value and value in variable add in add
+            //  differnce among the two experiences + 1,
+            // and storing the max of this  value and value in variable add in add
 
             if(initialExperience<=experience[iterator]){
 

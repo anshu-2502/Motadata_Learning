@@ -2,21 +2,19 @@ package Advance_dsa_IMPLEMENTATION.MisclleniousQuestions_7mar;
 
 public class CycleinLInklist {
 
-    static Node head;
+      Node head;
 
-    static class Node {
+   static class Node {
         int data;
         Node next;
 
-        Node(int d)
-        {
+        Node(int d) {
             data = d;
             next = null;
         }
     }
 
-    static public void push(int new_data)
-    {
+     public void push(int new_data) {
 
 
         Node new_node = new Node(new_data);
@@ -27,29 +25,25 @@ public class CycleinLInklist {
         head = new_node;
     }
 
-    static boolean detectLoop(Node h)
-    {
+     boolean detectLoop(Node head) {
+        Node slowPointer = head, fastPointer = head;
 
-        if (head == null)
-            return false;
-        else {
+        while (slowPointer != null && fastPointer != null && fastPointer.next != null) {
 
+            slowPointer = slowPointer.next;
 
-            while (head != null) {
+            fastPointer = fastPointer.next.next;
 
-                if (head.data == -1) {
-                    return true;
-                }
+            if (slowPointer == fastPointer) {
 
-
-                else {
-                    head.data = -1;
-                    head = head.next;
-                }
+                return true;
             }
-            return false;
         }
+
+        return false;
     }
+
+
 
 
     public static void main(String[] args)
@@ -68,7 +62,7 @@ public class CycleinLInklist {
             llist.head.next.next.next.next.next
                     = llist.head.next.next;
 
-            if (detectLoop(llist.head)) {
+            if (llist.detectLoop(llist.head)) {
                 System.out.println("Loop Found");
 
             } else {
