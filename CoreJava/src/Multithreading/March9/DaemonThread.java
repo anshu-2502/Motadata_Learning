@@ -10,8 +10,11 @@ public class DaemonThread {
             while(true){
                 try {
                     sleep(1000);
+
                     System.out.println("Running");
+
                 } catch (InterruptedException e) {
+
                     e.printStackTrace();
                 }
             }
@@ -22,8 +25,10 @@ public class DaemonThread {
         //even after main thread terminated one thread is running and jvm is kept alive
         //and then we need to mark daemon thread, upto when mainthread runs
         //it runs.
-       thread.setDaemon(true);   //stopped in undefined state
+        thread.setDaemon(true);//stopped in undefined state
+
         thread.start(); // main thread
+
         sleep(3100);
 
     }

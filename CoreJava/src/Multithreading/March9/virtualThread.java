@@ -9,6 +9,9 @@ public class virtualThread {
         Runnable runnable =() ->{
 
             for(int iterator=0; iterator<10; iterator++){
+
+
+
                 System.out.println("Index: " + iterator);
 
             }

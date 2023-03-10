@@ -4,13 +4,16 @@ class MyRunnable implements  Runnable{
 
     private int count=0;
 
-
     @Override
     public void run() {
 
         for(int iterator=0; iterator<1_000_000; iterator++){
 
-            this.count ++;
+//            synchronized (this){
+//                this.count ++;
+//            }
+//
+                 count++;
         }
 
         System.out.println(Thread.currentThread().getName() + " : " + this.count);
