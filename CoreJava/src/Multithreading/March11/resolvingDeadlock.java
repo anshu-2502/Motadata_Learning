@@ -78,7 +78,7 @@ public class resolvingDeadlock {
         new Thread(runnable2).start();
     }
 
-    // resource1
+
 
     }
 
