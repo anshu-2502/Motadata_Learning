@@ -31,6 +31,7 @@ class MyThread extends Thread{
     MyThread(Display display,String name)
     {
         this.display=display;
+
         this.name=name;
     }
     public void run()

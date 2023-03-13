@@ -18,11 +18,15 @@ public class resolvingDeadlock {
         private int value = 10;
 
         public int getValue() {
+
             return value;
+
         }
 
         public void setValue(int value) {
+
             this.value = value;
+
         }
     }
     public static void main(String args[]) {
