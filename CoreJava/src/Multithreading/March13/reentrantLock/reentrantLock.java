@@ -5,7 +5,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class reentrantLock {
 
     private static ReentrantLock reentrantLock = new ReentrantLock(true);
-
     private static int count=0;
 
     private void isSync(){
