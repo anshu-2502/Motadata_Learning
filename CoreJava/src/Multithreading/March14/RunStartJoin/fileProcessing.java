@@ -1,5 +1,7 @@
 package Multithreading.March14.RunStartJoin;
 
+import Multithreading.March11.ThreadMethod;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +30,14 @@ public class fileProcessing {
         }
 
         //processing files one by one:
-
-        for(File file: inFile){
-            System.out.println("processing" + file.getName() + "in thread" + Thread.currentThread().getName());
-        }
+try {
+    for (File file : inFile) {
+        System.out.println("processing" + file.getName() + "in thread" + Thread.currentThread().getName());
+    }
+}
+catch(Exception e){
+    System.out.println("file not found");
+}
 
     }
     public static void main(String[]args){
@@ -65,8 +71,13 @@ public class fileProcessing {
 
         }
 
+
+
         for(Thread thread1 :threads){
             thread1.start();
+
+            ThreadMethod.yield();
+            System.out.println("main thread running");
 
             //starting processing all the threads
 
