@@ -22,6 +22,15 @@ public class producerConsumer {
         consumerThread.start();
 
 
+        Thread producerThread2 = new Thread(new producer(taskqueue, MAX_CAPACITY), "Producer2");
+
+
+        Thread consumerThread2 = new Thread(new consumer(taskqueue), "Consumer2");
+
+        producerThread2.start();
+
+        consumerThread2.start();
+
     }
 
 }
