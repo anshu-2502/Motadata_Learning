@@ -18,6 +18,9 @@ public class philosopher implements Runnable {
 
     private int eatingCounter;
 
+    public philosopher(int iterator, chopstick chopstick, chopstick chopstick1) {
+    }
+
 
     @Override
     public void run() {
