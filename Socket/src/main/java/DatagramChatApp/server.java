@@ -9,6 +9,7 @@ public class server {
 
         DatagramSocket serverSocket = new DatagramSocket(1234);
 
+
         InetAddress ip = InetAddress.getLocalHost();
 
         System.out.println("server running");

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17066ce9-1bb8-47e0-96b4-b1dd461bf637" name="Changes" comment="socketProgramming" />
+    <list default="true" id="17066ce9-1bb8-47e0-96b4-b1dd461bf637" name="Changes" comment="socketProgramming">
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -41,16 +43,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/anshu/Motadata_Learning",
+    "last_opened_file_path": "/home/anshu/Motadata_Learning/Socket",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.talkclient (1)">
-    <configuration name="MultipleClientsSingleServer.client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MultipleClientsSingleServer.client" />
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MultipleClientsSingleServer.Client" />
       <module name="SocketProgramming" />
       <extension name="coverage">
         <pattern>
@@ -58,6 +60,25 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MultipleClientsSingleServer.Server" />
+      <module name="SocketProgramming" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MultipleClientsSingleServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" singleton="false">
+      <module name="SocketProgramming" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -70,38 +91,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="client (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DatagramChatApp.client" />
       <module name="SocketProgramming" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="DatagramChatApp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MultipleClientsSingleServer.server" />
-      <module name="SocketProgramming" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MultipleClientsSingleServer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="talkclient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MultithreadChatApp.talkclient" />
-      <module name="SocketProgramming" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MultithreadChatApp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,19 +132,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.chatClient" />
-      <item itemvalue="Application.MultipleClientsSingleServer.client" />
-      <item itemvalue="Application.server" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.client" />
       <item itemvalue="Application.talkclient" />
-      <item itemvalue="Application.talkclient (1)" />
       <item itemvalue="Application.talkserver" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.talkclient (1)" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.talkserver" />
         <item itemvalue="Application.talkclient" />
-        <item itemvalue="Application.server" />
-        <item itemvalue="Application.MultipleClientsSingleServer.client" />
+        <item itemvalue="Application.client" />
       </list>
     </recent_temporary>
   </component>
