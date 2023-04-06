@@ -56,7 +56,9 @@ public class chatServer {
     void broadcast(String message, UserThread excludeUser) {
 
         for (UserThread aUser : userThreads) {
+
             if (aUser != excludeUser) {
+
                 aUser.sendMessage(message);
             }
         }
@@ -104,6 +106,7 @@ public class chatServer {
         int port = Integer.parseInt(args[0]);
 
         chatServer server = new chatServer(port);
+
         server.executeServer();
 
 

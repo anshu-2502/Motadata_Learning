@@ -10,35 +10,48 @@ import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-
 public class Server {
 
     int port;
+
     ServerSocket server=null;
+
     Socket client=null;
+
     ExecutorService pool = null;
+
     int clientcount=0;
 
     public static void main(String[] args) throws IOException {
+
         Server serverobj=new Server(5000);
+
         serverobj.startServer();
     }
 
     Server(int port){
+
         this.port=port;
+
         pool = Executors.newFixedThreadPool(5);
     }
 
     public void startServer() throws IOException {
 
         server=new ServerSocket(5000);
-        System.out.println("Server Booted");
+
+        System.out.println("Server started");
+
         System.out.println("Any client can stop the server by sending -1");
+
         while(true)
         {
             client=server.accept();
+
             clientcount++;
+
             ServerThread runnable= new ServerThread(client,clientcount,this);
+
             pool.execute(runnable);
         }
 
@@ -48,55 +61,75 @@ public class Server {
 
         Server server=null;
         Socket client=null;
-        BufferedReader cin;
-        PrintStream cout;
+        BufferedReader ClientInput;
+        PrintStream ClientOutput;
         Scanner sc=new Scanner(System.in);
         int id;
-        String s;
+        String message;
 
         ServerThread(Socket client, int count ,Server server ) throws IOException {
 
             this.client=client;
+
             this.server=server;
+
             this.id=count;
+
             System.out.println("Connection "+id+"established with client "+client);
 
-            cin=new BufferedReader(new InputStreamReader(client.getInputStream()));
-            cout=new PrintStream(client.getOutputStream());
+            ClientInput=new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+            ClientOutput=new PrintStream(client.getOutputStream());
 
         }
 
         @Override
         public void run() {
-            int x=1;
+
+            int flag=1;
+
             try{
                 while(true){
-                    s=cin.readLine();
 
-                    System. out.print("Client("+id+") :"+s+"\n");
+                    message=ClientInput.readLine();
+
+                    System. out.print("Client("+id+") :"+message+"\n");
+
                     System.out.print("Server : ");
+
                     //s=stdin.readLine();
-                    s=sc.nextLine();
-                    if (s.equalsIgnoreCase("bye"))
+                    message=sc.nextLine();
+
+                    if (message.equalsIgnoreCase("bye"))
                     {
-                        cout.println("BYE");
-                        x=0;
+                        ClientOutput.println("BYE");
+
+                        flag=0;
+
                         System.out.println("Connection ended by server");
+
                         break;
                     }
-                    cout.println(s);
+
+                    ClientOutput.println(message);
                 }
 
 
-                cin.close();
+                ClientInput.close();
+
                 client.close();
-                cout.close();
-                if(x==0) {
+
+                ClientOutput.close();
+
+                if(flag==0) {
+
                     System.out.println( "Server cleaning up." );
+
                     System.exit(0);
                 }
             }
             catch(IOException ex){
+
                 System.out.println("Error : "+ex);
             }
 

@@ -53,8 +53,6 @@ public class ChatWebsocket {
 
         System.out.println("on close:" + session.getId());
 
-
-
         sessions.remove(session);
 
 

@@ -8,28 +8,43 @@ public class Client {
 
     public static void main(String args[]) throws Exception
     {
-        Socket sk=new Socket("127.0.0.1",5000);
-        BufferedReader sin=new BufferedReader(new InputStreamReader(sk.getInputStream()));
-        PrintStream sout=new PrintStream(sk.getOutputStream());
+        Socket socket=new Socket("127.0.0.1",5000);
+
+        BufferedReader serverInput=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+        PrintStream serverOutput=new PrintStream(socket.getOutputStream());
+
         BufferedReader stdin=new BufferedReader(new InputStreamReader(System.in));
-        String s;
+
+        String message;
+
         while (  true )
         {
             System.out.print("Client : ");
-            s=stdin.readLine();
-            sout.println(s);
-            if ( s.equalsIgnoreCase("BYE") )
+
+            message=stdin.readLine();
+
+            serverOutput.println(message);
+
+            if ( message.equalsIgnoreCase("BYE") )
             {
                 System.out.println("Connection ended by client");
+
                 break;
             }
-            s=sin.readLine();
-            System.out.print("Server : "+s+"\n");
+
+            message=serverInput.readLine();
+
+            System.out.print("Server : "+message+"\n");
+
 
         }
-        sk.close();
-        sin.close();
-        sout.close();
+        socket.close();
+
+        serverInput.close();
+
+        serverOutput.close();
+
         stdin.close();
     }
 

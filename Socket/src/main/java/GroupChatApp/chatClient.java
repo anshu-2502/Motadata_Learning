@@ -23,15 +23,16 @@ public  class chatClient {
     public void execute(){
 
         try{
+
             Socket socket = new Socket(hostname, port);
 
             System.out.println("connected to chat server");
 
-           ReadThread readThread=  new ReadThread(socket, this);
+            ReadThread readThread=  new ReadThread(socket, this);
 
-           readThread.start();
+            readThread.start();
 
-           WriteThread writeThread = new WriteThread(socket,this);
+            WriteThread writeThread = new WriteThread(socket,this);
 
             writeThread.start();
 
