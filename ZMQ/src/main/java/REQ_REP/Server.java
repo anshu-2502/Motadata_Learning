@@ -6,7 +6,9 @@ import org.zeromq.ZMQ;
 
 public class Server {
     public static void main(String[] args) throws Exception {
+
         try (ZMQ.Context context = ZMQ.context(1)) {
+
 
             //  Socket to talk to clients
             //REP means reply socket
@@ -21,7 +23,11 @@ public class Server {
 
                 byte[] request = responder.recv(0);
 
+//                System.out.println(responder.getMaxMsgSize());
+
+
                 System.out.println("Received " + new String(request));
+
 
 
 //                System.out.println("Received Hello");
@@ -33,6 +39,12 @@ public class Server {
                 String reply = "World";
 
                 responder.send(reply.getBytes(), 0);
+
+                responder.setLinger(1000);
+
+//                System.out.println(responder.getLinger());
+
+                responder.close();
             }
 
         }

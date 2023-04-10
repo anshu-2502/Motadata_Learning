@@ -12,14 +12,14 @@ public class TaskProvider {
 
     public static void main(String[] args) throws Exception
     {
-        try (ZContext context = new ZContext()) {
+        try (ZMQ.Context context = ZMQ.context(1)) {
 
-            ZMQ.Socket sender = context.createSocket(SocketType.PUSH);
+            ZMQ.Socket sender = context.socket(SocketType.PUSH);
 
             sender.bind("tcp://*:5557");
 
 
-            ZMQ.Socket sink = context.createSocket(SocketType.PUSH);
+            ZMQ.Socket sink = context.socket(SocketType.PUSH);
 
             sink.connect("tcp://localhost:5558");
 

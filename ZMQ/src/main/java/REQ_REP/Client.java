@@ -15,7 +15,7 @@ public class Client {
 
             ZMQ.Socket requester = context.socket(ZMQ.REQ);
 
-            requester.connect("tcp://localhost:5555");
+            requester.connect("tcp://*:5555");
 
             for (int requestNbr = 0; requestNbr != 10; requestNbr++) {
 
@@ -30,6 +30,8 @@ public class Client {
                 System.out.println("Received " + new String(reply) + " " + requestNbr);
 
             }
+            requester.setLinger(1000);
+            requester.close();
         }
 
     }
