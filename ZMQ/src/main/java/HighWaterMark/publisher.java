@@ -4,45 +4,37 @@ import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
+import java.util.Random;
+
 public class publisher {
 
-    protected static int SUBSCRIBERS_EXPECTED = 10;
-
-    public static void main(String[] args)
+    public static void main (String[] args)
     {
-        try (ZContext context = new ZContext()) {
-            //  Socket to talk to clients
-            ZMQ.Socket publisher = context.createSocket(SocketType.PUB);
-            publisher.setLinger(5000);
-            // In 0MQ 3.x pub socket could drop messages if sub can follow the
-            // generation of pub messages
-            publisher.setSndHWM(10000);
-            publisher.bind("tcp://*:5561");
+        try( ZContext context = new ZContext(); ZMQ.Socket socket = context.createSocket(SocketType.PUB))
+        {
+            socket.bind("tcp://*:9999");
 
-            //  Socket to receive signals
-            ZMQ.Socket syncservice = context.createSocket(SocketType.REP);
-            syncservice.bind("tcp://*:5562");
+            socket.setSndHWM(2);
 
-            System.out.println("Waiting for subscribers");
-            //  Get synchronization from subscribers
-            int subscribers = 0;
-            while (subscribers < SUBSCRIBERS_EXPECTED) {
-                //  - wait for synchronization request
-                syncservice.recv(0);
+            Random random = new Random();
 
-                //  - send synchronization reply
-                syncservice.send("", 0);
-                subscribers++;
+            while ( true )
+            {
+                String message = "Anushka " + random.nextInt(1000);
+
+                socket.sendMore("Anushkaaaa");
+
+                socket.send(message);
+
+                socket.send("Blahh");
+
+                Thread.sleep(1000);
             }
-            //  Now broadcast exactly 1M updates followed by END
-            System.out.println("Broadcasting messages");
-
-            int update_nbr;
-            for (update_nbr = 0; update_nbr < 1000000; update_nbr++) {
-                publisher.send("Hi Anushka", 0);
-            }
-
-            publisher.send("END", 0);
+        }
+        catch ( Exception exception)
+        {
+            exception.printStackTrace();
         }
     }
-}
+
+    }

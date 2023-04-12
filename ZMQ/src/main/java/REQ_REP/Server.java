@@ -10,8 +10,7 @@ public class Server {
         try (ZMQ.Context context = ZMQ.context(1)) {
 
 
-            //  Socket to talk to clients
-            //REP means reply socket
+
 
             ZMQ.Socket responder = context.socket(ZMQ.REP);
 
@@ -19,7 +18,6 @@ public class Server {
 
             while (!Thread.currentThread().isInterrupted()) {
 
-                // Wait for next request from the client
 
                 byte[] request = responder.recv(0);
 
@@ -40,7 +38,7 @@ public class Server {
 
                 responder.send(reply.getBytes(), 0);
 
-                responder.setLinger(1000);
+//                responder.setLinger(1000);
 
 //                System.out.println(responder.getLinger());
 
