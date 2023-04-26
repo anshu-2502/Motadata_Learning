@@ -2,7 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/testJetty" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/testingjetty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/js" vcs="Git" />
   </component>
 </project>
