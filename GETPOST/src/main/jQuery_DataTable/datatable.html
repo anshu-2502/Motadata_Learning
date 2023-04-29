@@ -1,0 +1,60 @@
+<html>
+<head>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"
+    />
+</head>
+<body>
+<table id="table_id">
+    <thead>
+    <tr>
+        <th class="subj_name">Subject</th>
+        <th>Marks</th>
+        <th>Grade</th>
+        <th>Last Modified</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+></script>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"
+></script>
+<script>
+    $(function() {
+        $("#table_id").dataTable({
+            aaData: [
+                ["Maths", "95", "A+", "null"],
+                ["English", "85", "A", "null"],
+                ["Science", "70", "A+", "2019-06-11 06:30:00"],
+                ["History", "80", "A", "null"],
+                ["Arts", "75", "B", "null"],
+                ["Economics", "70", "A+", "2019-11-09 06:30:00"],
+                ["Commerce", "80", "A", "null"]
+            ],
+            aoColumnDefs: [
+                {
+                    sTitle: "Subject Name",
+                    aTargets: ["subj_name"]
+                },
+                {
+                    aTargets: [3],
+                    sType: "date",
+                    mRender: function(date, type, full) {
+                        return full[1] == "70" ? new Date(date).toDateString() : "N/A";
+                    }
+                }
+            ]
+        });
+    });
+</script>
+</body>
+</html>

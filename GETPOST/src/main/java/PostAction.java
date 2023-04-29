@@ -1,5 +1,8 @@
 import java.sql.SQLException;
 
+import static com.opensymphony.xwork2.Action.ERROR;
+import static com.opensymphony.xwork2.Action.SUCCESS;
+
 public class PostAction {
 
     private String name;
@@ -38,10 +41,10 @@ public class PostAction {
 
         if(i>0){
 
-            return  "success";
+            return SUCCESS;
         }
 
-        return "error";
+        return ERROR;
     }
 
 
