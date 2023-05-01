@@ -1,14 +1,16 @@
+import com.opensymphony.xwork2.Action;
+
 import java.sql.SQLException;
 
 import static com.opensymphony.xwork2.Action.ERROR;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 
-public class PostAction {
+public class PostAction implements Action {
 
-    private String name;
-    private String email;
+     String name;
+     String email;
 
-    private String hobbies;
+     String hobbies;
 
     public String getName() {
         return name;
@@ -37,16 +39,13 @@ public class PostAction {
 
     public String execute() throws SQLException {
 
-        int i=databaseConnection.save(this);
+        databaseConnection.save(this);
 
-        if(i>0){
 
             return SUCCESS;
         }
 
-        return ERROR;
-    }
-
 
 
 }
+

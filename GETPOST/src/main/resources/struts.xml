@@ -3,14 +3,13 @@
 Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
     <package name="default" extends="struts-default">
+        <action name="">
+            <result>/index.jsp</result>
+        </action>
 
         <action name="submit" class="PostAction">
 
-
-
-            <result name="success">success.jsp</result>
-
-            <result name="error">error.jsp</result>
+            <result name="success">/index.jsp</result>
         </action>
     </package>
 </struts>

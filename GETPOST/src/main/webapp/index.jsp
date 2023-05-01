@@ -8,7 +8,7 @@
     />
     <script src="getpost.js"></script>
 
-    <script></script>
+
 </head>
 <body>
 <div class="col-sm-6 col-sm-offset-3">

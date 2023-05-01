@@ -22,17 +22,16 @@ public class databaseConnection {
 
             PreparedStatement preparedStatement;
 
-            preparedStatement = connection.prepareStatement("INSERT INTO HOBBIES (name, email, hobbies) VALUES(?,?,?)");
+            preparedStatement = connection.prepareStatement("INSERT INTO HOBBIES VALUES(?,?,?)");
 
-            preparedStatement.executeUpdate();
 
-            preparedStatement.setString(1, post.getName());
+            preparedStatement.setString(1, post.name);
 
-            preparedStatement.setString(2, post.getEmail());
+            preparedStatement.setString(2, post.email);
 
-            preparedStatement.setString(3, post.getHobbies());
+            preparedStatement.setString(3, post.hobbies);
 
-            status=preparedStatement.executeUpdate();
+            preparedStatement.execute();
         }
         catch(Exception e){
 
