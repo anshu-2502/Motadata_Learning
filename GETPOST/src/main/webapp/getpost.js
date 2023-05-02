@@ -1,6 +1,6 @@
-
 $(document).ready(function () {
-    $("form").submit(function (event) {
+
+    $("#form1").submit(function (event) {
         var formData = {
             name: $("#name").val(),
             email: $("#email").val(),
@@ -19,6 +19,46 @@ $(document).ready(function () {
 
         });
 
-        event.preventDefault();
+
     });
+
+    $("button#show").click(function (){
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/get",
+            dataType: "json",
+
+            success: function (data) {
+
+                console.log(data.result);
+
+                let aData = $.parseJSON(data.result);
+
+                // for(var i in data.result)
+                // {
+                //     $("p#result").html(data.result);
+                // }
+
+                $("#datatable").DataTable({
+                    data: aData,
+
+                    columns: [
+                        {
+                            data: 'name'
+                        },
+                        {
+                            data: 'email'
+                        },
+                        {
+                            data: 'hobbies'
+                        }
+                    ]
+
+                });
+            }
+        });
+
+    });
+
+
 });

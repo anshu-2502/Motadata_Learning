@@ -1,18 +1,25 @@
 import com.opensymphony.xwork2.Action;
 
 import java.sql.SQLException;
-
-import static com.opensymphony.xwork2.Action.ERROR;
-import static com.opensymphony.xwork2.Action.SUCCESS;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class PostAction implements Action {
 
-     String name;
-     String email;
+    String name;
+    String email;
 
-     String hobbies;
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    String result = String.valueOf(new ArrayList<>());
+
+    String hobbies;
 
     public String getName() {
+
         return name;
     }
 
@@ -36,16 +43,32 @@ public class PostAction implements Action {
         this.name = name;
     }
 
+    public String getResult() {
+        return result;
+    }
+
 
     public String execute() throws SQLException {
 
+        return null;
+    }
+
+    public String post() throws SQLException {
+
+        System.out.println("post called");
+
         databaseConnection.save(this);
 
+        return SUCCESS;
+    }
 
-            return SUCCESS;
-        }
+    public String get() throws SQLException{
+        System.out.println("get called");
+
+        result = databaseConnection.getInfo();
 
 
+        return SUCCESS;
+    }
 
 }
-
