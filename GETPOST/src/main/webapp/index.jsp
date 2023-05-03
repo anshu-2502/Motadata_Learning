@@ -61,7 +61,7 @@
             />
         </div>
 
-        <button type="submit" value="submit" class="btn btn-warning">
+        <button id="post" type="submit" value="submit" class="btn btn-warning">
             POST
         </button>
     </form>
@@ -87,10 +87,11 @@
                 <th>Hobbies</th>
             </tr>
             </thead>
+            <tbody></tbody>
         </table>
     </div>
 
-
+</div>
 
 
 

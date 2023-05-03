@@ -26,6 +26,8 @@ public class databaseConnection {
 
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO HOBBIES VALUES(?,?,?)");
 
+            System.out.println(post.name);
+
             preparedStatement.setString(1, post.name);
 
             preparedStatement.setString(2, post.email);
@@ -54,9 +56,6 @@ public class databaseConnection {
         String user = "sa";
 
         String pass = "";
-
-
-
 
     try(Connection connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test","sa",""))
     {
