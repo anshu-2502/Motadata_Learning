@@ -1,14 +1,8 @@
 package client_server;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Handler;
-import io.vertx.core.http.HttpClient;
-import io.vertx.core.http.HttpClientRequest;
-import io.vertx.core.http.HttpMethod;
-import io.vertx.core.http.RequestOptions;
-import io.vertx.core.net.NetClient;
 
-import java.nio.Buffer;
+import io.vertx.core.net.NetClient;
 
 public class ClientVerticle extends AbstractVerticle {
     @Override
