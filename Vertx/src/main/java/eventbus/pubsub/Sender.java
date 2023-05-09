@@ -14,17 +14,19 @@ public class Sender extends AbstractVerticle {
 
         EventBus eventBus = vertx.eventBus();
 
-        final int[] count = {1,2};
+//        final int[] count = {1,2};
+
+        int count=5;
 
         vertx.setPeriodic(1000, message->{
 
-            eventBus.publish("hi anshu", count[0]++);
+            eventBus.publish("hi anshu", count);
 
         });
 
         vertx.setPeriodic(1000, message->{
 
-            eventBus.publish("hi anshu2", count[1]++);
+            eventBus.publish("hi anshu", count);
 
         });
 

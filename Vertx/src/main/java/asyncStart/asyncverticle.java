@@ -14,6 +14,7 @@ public class asyncverticle extends AbstractVerticle {
             System.out.println("startup task completed!");
 
             startPromise.complete();
+
         });
 
 

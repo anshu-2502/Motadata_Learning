@@ -8,13 +8,10 @@ public class Receiver2 extends AbstractVerticle {
 
         EventBus eventBus = vertx.eventBus();
 
-        eventBus.consumer("hi anshu update--" , message -> {
+        eventBus.consumer("hi anshu" , message -> {
             System.out.println(message.body());
         });
 
-        eventBus.consumer("hi anshu-2 update--" , message -> {
-            System.out.println(message.body());
-        });
+
     }
 }
-

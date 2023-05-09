@@ -24,7 +24,7 @@ public class simpleVerticle extends AbstractVerticle {
 
     }
     public void stop() {
-        System.out.println("Cleanup tasks are now complete, VerticleExample is now stopped!");
+        System.out.println("Cleanup tasks are now complete, Verticle Example is now stopped!");
 
     }
 }
