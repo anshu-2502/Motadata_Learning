@@ -7,10 +7,21 @@ import io.vertx.core.http.HttpClientRequest;
 import io.vertx.core.http.HttpMethod;
 
 public class Client extends AbstractVerticle {
-    public static void main(String[] args) {
-        Vertx vertx = Vertx.vertx();
 
-        vertx.deployVerticle(new Client());
+    public static void main(String[] args) {
+
+        try {
+
+
+            Vertx vertx = Vertx.vertx();
+
+            vertx.deployVerticle(new Client());
+
+        }
+        catch (Exception e){
+
+            System.out.println(e);
+        }
     }
 
     @Override
@@ -21,6 +32,7 @@ public class Client extends AbstractVerticle {
         client.request(HttpMethod.GET, 8080, "localhost", "/")
                 .compose(HttpClientRequest::send)
                 .compose(res -> {
+
                     System.out.println(res.statusCode());
 
                     return res.body();

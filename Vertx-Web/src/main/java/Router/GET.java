@@ -55,7 +55,7 @@ public class GET extends AbstractVerticle {
 
         HttpServerResponse response = context.response();
 
-        response.write("I am fine\n");
+        response.write("Anushka\n");
 
         context.next();
 
