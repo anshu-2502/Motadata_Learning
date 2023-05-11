@@ -1,4 +1,4 @@
-package Router;
+package router;
 
 import io.vertx.core.*;
 import io.vertx.core.http.HttpMethod;
