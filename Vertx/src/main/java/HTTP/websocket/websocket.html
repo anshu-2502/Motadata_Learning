@@ -4,11 +4,15 @@
 <script>
     var socket;
     if (window.WebSocket) {
+
         socket = new WebSocket("ws://localhost:8080/myapp");
+
         socket.onmessage = function (event) {
+
             alert("Received data from websocket: " + event.data);
         }
         socket.onopen = function (event) {
+
             alert("Web Socket opened!");
         };
         socket.onclose = function (event) {
@@ -32,6 +36,8 @@
         }
     }
 </script>
+
+<h1>WEBSOCKETS IN VERT.X</h1>
 <form onsubmit="return false;">
     <input type="text" name="message" value="Hello, World!"/>
     <input type="button" value="Send Web Socket Data" onclick="send(this.form.message.value)"/>

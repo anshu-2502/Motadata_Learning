@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.io/sockjs-client@1.5.0/dist/sockjs.min.js"></script>
+  <script src='https://unpkg.io/@vertx/eventbus-bridge-client.js@1.0.0-1/vertx-eventbus.js'></script>
+</head>
+<body>
+
+<h1>HIEZ</h1>
+<script>
+  var eb = new EventBus('http://localhost:9090/myapp');
+  eb.onopen = () => {
+    console.log("Connected!");
+// set a handler to receive a message
+    eb.registerHandler('hello.inbound', (error, message) => {
+      console.log('received a message: ' + JSON.stringify(message));
+    });
+// send a message
+    setInterval(() =>eb.send('hello.outbound', {"name":"anushka", "message":"hies"}), 5000);
+    setInterval(() =>eb.send('hello.outbound', {"name":"anshu", "message":"Hies"}), 2000);
+  }
+</script>
+</body>
+</html>

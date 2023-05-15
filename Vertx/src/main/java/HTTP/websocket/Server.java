@@ -7,7 +7,9 @@ public class Server extends AbstractVerticle {
 
     @Override
     public void start() throws Exception {
+
         vertx.createHttpServer().webSocketHandler(ws -> ws.handler(ws::writeBinaryMessage)).requestHandler(req -> {
+
             if (req.uri().equals("/")) {
 
                 req.response().sendFile("/home/anshu/anshu_training/Motadata_Learning/Vertx/src/main/java/HTTP/websocket/websocket.html");

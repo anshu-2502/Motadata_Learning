@@ -56,8 +56,14 @@ public class GET extends AbstractVerticle {
         HttpServerResponse response = context.response();
 
         response.write("Anushka\n");
+//
+//        context.put("hie", "yolo");
+//
+//        System.out.println("context put successfully");
 
         context.next();
+
+//        context.response().end();
 
       });
 
@@ -83,11 +89,15 @@ public class GET extends AbstractVerticle {
 
         response.write("Welcome to Fruit Shop!");
 
+//        String bar = context.get("foo");
+
+//        response.write(bar);
+
         response.end();
 
       });
 
-      JsonObject fruits = new JsonObject(new String(Files.readAllBytes(Path.of("/home/anshu/anshu_training/Motadata_Learning/Vertx-Web/src/main/java/Router/fruits.json"))));
+      JsonObject fruits = new JsonObject(new String(Files.readAllBytes(Path.of("/home/anshu/anshu_training/Motadata_Learning/Vertx-Web/src/main/java/router/fruits.json"))));
 
       router.route("/fruits").order(1).respond(context -> {
 
