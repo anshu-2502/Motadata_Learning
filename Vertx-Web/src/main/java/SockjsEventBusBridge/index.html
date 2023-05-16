@@ -6,18 +6,30 @@
 </head>
 <body>
 
-<h1>HIEZ</h1>
+<h1>EVENT BUS BRIDGE </h1>
 <script>
-  var eb = new EventBus('http://localhost:9090/myapp');
+  var eb = new EventBus('http://localhost:8080/myapp');
+
   eb.onopen = () => {
+
     console.log("Connected!");
-// set a handler to receive a message
-    eb.registerHandler('hello.inbound', (error, message) => {
+
+
+    //inbound: client to server.
+
+    eb.registerHandler('chat.inbound', (error, message) => {
+
       console.log('received a message: ' + JSON.stringify(message));
+
     });
-// send a message
-    setInterval(() =>eb.send('hello.outbound', {"name":"anushka", "message":"hies"}), 5000);
-    setInterval(() =>eb.send('hello.outbound', {"name":"anshu", "message":"Hies"}), 2000);
+
+
+    // outbound: server to client
+
+    setInterval(() =>eb.send('chat.outbound', {"name":"anushka", "college":"jklu"}), 1000);
+
+
+    setInterval(() =>eb.send('chat.outbound', {"name":"anshu", "college":"jk lakshmipat"}), 2000);
   }
 </script>
 </body>

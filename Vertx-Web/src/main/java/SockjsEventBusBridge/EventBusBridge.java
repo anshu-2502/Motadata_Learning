@@ -1,18 +1,15 @@
 package SockjsEventBusBridge;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.http.HttpServer;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.bridge.BridgeEventType;
 import io.vertx.ext.bridge.PermittedOptions;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.sockjs.SockJSBridgeOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
-import simpleSockjs.EchoServer;
+
 
 public class EventBusBridge extends AbstractVerticle {
 
@@ -32,27 +29,30 @@ public class EventBusBridge extends AbstractVerticle {
 
         .addOutboundPermitted(new PermittedOptions().setAddress("chat.outbound"))));
 
-      vertx.setPeriodic(4000, tid -> {
+      vertx.setPeriodic(2000, tid -> {
 
-        eventBus.publish("chat.inbound", "Anushka here");
+        eventBus.publish("chat.outbound", "Anushka here");
+
       });
-    eventBus.consumer("chat.outbound", message->{
+
+    eventBus.consumer("chat.inbound", message->{
 
       System.out.println(message.body());
+
     });
 
-    server.requestHandler(router).listen(8888).onComplete(ready -> {
+    server.requestHandler(router).listen(8080).onComplete(ready -> {
 
       if (ready.succeeded()) {
 
-        System.out.println("Server Started Listening! ");
+        System.out.println("Server on port 8080!");
 
         startPromise.complete();
 
       } else {
 
-        System.out.println("Server Failed To Start!!");
-        startPromise.fail("Server Failed To Start!!" + ready.cause().getMessage());
+        startPromise.fail( ready.cause().getMessage());
+
       }
     });
   }

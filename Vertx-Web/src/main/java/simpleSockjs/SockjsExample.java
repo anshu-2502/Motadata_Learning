@@ -31,7 +31,6 @@ public class SockjsExample extends AbstractVerticle {
     SockJSHandler sockJSHandler = SockJSHandler.create(vertx, options);
 
 
-
     router.route("/myapp/*").subRouter(sockJSHandler.socketHandler(sockJSSocket -> {
 
         System.out.println("hie");
@@ -40,7 +39,9 @@ public class SockjsExample extends AbstractVerticle {
 
 
         sockJSSocket.handler(handler -> {
-          sockJSSocket.write(handler + "<-");
+
+          sockJSSocket.write(handler + "yess!!");
+
         });
 
         sockJSSocket.end();
