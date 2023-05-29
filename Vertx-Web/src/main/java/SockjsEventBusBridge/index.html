@@ -17,7 +17,7 @@
 
     //inbound: client to server.
 
-    eb.registerHandler('chat.inbound', (error, message) => {
+    eb.registerHandler('chat.outbound', (error, message) => {
 
       console.log('received a message: ' + JSON.stringify(message));
 
@@ -26,10 +26,10 @@
 
     // outbound: server to client
 
-    setInterval(() =>eb.send('chat.outbound', {"name":"anushka", "college":"jklu"}), 1000);
+    setInterval(() =>eb.send('chat.inbound', {"name":"anushka", "college":"jklu"}), 1000);
 
 
-    setInterval(() =>eb.send('chat.outbound', {"name":"anshu", "college":"jk lakshmipat"}), 2000);
+    setInterval(() =>eb.send('chat.inbound', {"name":"anshu", "college":"jk lakshmipat"}), 2000);
   }
 </script>
 </body>

@@ -33,7 +33,7 @@ public class EventBusBridge extends AbstractVerticle {
 
         eventBus.publish("chat.outbound", "Anushka here");
 
-      });
+  });
 
     eventBus.consumer("chat.inbound", message->{
 
@@ -41,7 +41,7 @@ public class EventBusBridge extends AbstractVerticle {
 
     });
 
-    server.requestHandler(router).listen(8080).onComplete(ready -> {
+      server.requestHandler(router).listen(8080).onComplete(ready -> {
 
       if (ready.succeeded()) {
 
@@ -58,6 +58,7 @@ public class EventBusBridge extends AbstractVerticle {
   }
 
   public static void main(String[] args) {
+
     Vertx vertx = Vertx.vertx();
 
     vertx.deployVerticle(new EventBusBridge());

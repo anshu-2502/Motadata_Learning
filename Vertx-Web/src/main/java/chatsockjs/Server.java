@@ -39,19 +39,20 @@ public class Server extends AbstractVerticle {
 
     vertx.createHttpServer().requestHandler(router).listen(8080);
 
+    System.out.println("server started on port 8080!");
+
 
     EventBus eb = vertx.eventBus();
 
-    // Register to listen for messages coming IN to the server
 
     eb.consumer("chat.to.server").handler(message -> {
 
 
       String timestamp = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).format(Date.from(Instant.now()));
 
-      // Send the message back out to all clients with the timestamp prepended.
 
       eb.publish("chat.to.client", timestamp + ": " + message.body());
+
     });
 
   }

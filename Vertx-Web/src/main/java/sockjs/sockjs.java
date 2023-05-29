@@ -26,20 +26,20 @@ public class sockjs extends AbstractVerticle {
 
     SockJSHandler sockJSHandler = SockJSHandler.create(vertx, options);
 
-    System.out.println("hell-o1----------------------------------------");
+    System.out.println("hello1----------------------------------------");
 
 
     router.route("/socket/*")
       .subRouter(sockJSHandler.socketHandler(sockJSSocket -> {
 
 
-        System.out.println("hell-o----------------------------------------");
+        System.out.println("hello----------------------------------------");
 
         sockJSSocket.write("Hello from server ");
 
         sockJSSocket.handler(buffer -> System.out.println(buffer.toString()));
 
-        System.out.println("hell-o----------------------------------------");
+        System.out.println("hello----------------------------------------");
 
         sockJSSocket.end();
 

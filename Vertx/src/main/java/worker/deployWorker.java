@@ -18,7 +18,7 @@ public class deployWorker extends AbstractVerticle {
 
         System.out.println("after setting worker poolsize as 2: -> "+options.getWorkerPoolSize());
 
-        vertx.deployVerticle(new workerVerticle(), result->{
+        vertx.deployVerticle(new workerVerticle(),options, result->{
 
             if(result.succeeded()){
 
