@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+    <style>
+        .modal-header, h4, .close {
+            background-color: deepskyblue;
+            color:white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Discovery</h2>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-default btn-lg" id="myBtn">Add Device</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-lock"></span> Add a device</h4>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <form id="form1" class="form" role="form" method="post">
+                        <div name="name-group" class= "form-group">
+                            <label for="devicename"> DeviceName</label>
+                            <input type="text" class="form-control" id="devicename" name="devicename" placeholder="Enter device name">
+                        </div>
+                        <div  name="ip-group" class="form-group">
+                            <label for="deviceip">Device ip</label>
+                            <input type="text" class="form-control" id="deviceip" name="deviceip" placeholder="Enter device ip">
+                        </div>
+                        <div name="protocol-type" class="form-group">
+                            <select name="language" id="myselection">
+                                <option value="ping" >Ping</option>
+
+                                <option value="ssh">SSH</option>
+
+                            </select>
+                            <br>
+                            <br>
+
+                            <div id="sshcall" style="display: none" onchange="showssh">
+                                <div name="ssh-group" class= "form-group">
+                                    <label for="username"> UserName</label>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter user name">
+                                </div>
+                                <div name="ssh-group" class= "form-group">
+                                    <label for="username">Password</label>
+                                    <input type="text" class="form-control" id="password" name="password" placeholder="Enter password">
+                                </div>
+                            </div>
+                            </div>
+                        <button id="post"  type="submit" value="submit" class="btn btn-success btn-block"></span>Save</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--datatable -->
+            <br />
+<table id="myTable">
+    <thead>
+    <tr>
+        <th>Device Id</th>
+        <th>Device IP</th>
+        <th>Device Name</th>
+        <th>Device Type</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+</table>
+</div>
+</div>
+    </div>
+
+</div>
+
+
+<script src="javascript/helper/ajax.js">
+
+</script>
+<script src="javascript/discovery.js">
+
+</script>
+
+</body>
+</html>

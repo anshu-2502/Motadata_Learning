@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d04fbbd0-6468-4115-836b-e91981a654ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../awesomeProject/may31/panic-recover/deferPanic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../awesomeProject/may31/panic-recover/panic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../awesomeProject/may31/panic-recover/panicrecovergoroutine.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../awesomeProject/may31/panic-recover/recover.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../awesomeProject/may31/panic-recover/runtimePanic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../awesomeProject/may31/panic-recover/stackTrace.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/src/main/java/datafromexe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/src/main/java/testexe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2QmiFQGpyD7ilKYb2IvTrqnJa7k" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d04fbbd0-6468-4115-836b-e91981a654ec" name="Changes" comment="" />
+      <created>1685965056587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685965056587</updated>
+      <workItem from="1685965057673" duration="224000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
